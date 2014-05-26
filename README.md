@@ -1,0 +1,1 @@
+Ecmascript 6 lyntale til faggruppemøte 28.05.14
