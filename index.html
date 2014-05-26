@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Ecmascript 6 lyntale</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -52,19 +52,162 @@
         </section>
 
         <section>
-          <h2>Pilfunksjoner</h2>
-          <p>
-
-          </p>
-
-          <aside class="notes">
-            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-          </aside>
+          <h1><code>=></code></h1>
+          <p class="fragment">(pilfunksjon, arrow function)</p>
+        </section>
+        <section>
+          <h2>Pilfunksjon</h2>
+          <ul>
+            <li><strong>Lexical this binding</strong> The value of <code>this</code> inside of the function is determined by where the arrow function is defined not where it is used.</li>
+            <li><strong>Not newable</strong>: Arrow functions cannot be used a constructors and will throw an error when used with <code>new</code>.</li>
+            <li><strong>Can’t change <code>this</code>:</strong> The value of this inside of the function can’t be changed, it remains the same value throughout the entire lifecycle of the function.</li>
+          </ol>
 
         </section>
 
         <section>
-          <h2>Annet</h2>
+          <p>Et parameter</p>
+          <pre>
+            <code>
+var reflect = value => value;
+
+// effectively equivalent to:
+
+var reflect = function(value) {
+    return value;
+};
+            </code>
+          </pre>
+
+        </section>
+
+        <section>
+          <p>Flere parameter</p>
+          <pre>
+            <code class='javascript'>
+var sum = (num1, num2) => { return num1 + num2; }
+
+// effectively equivalent to:
+
+var sum = function(num1, num2) {
+    return num1 + num2;
+};
+            </code>
+          </pre>
+          <aside class="notes">
+            Mer eller mindre likt som insiden av en vanlig funksjon.
+          </aside>
+        </section>
+
+        <section>
+          <p>Uten parametere</p>
+          <pre>
+            <code class='javascript'>
+var sum = () => 1 + 2;
+
+// effectively equivalent to:
+
+var sum = function() {
+    return 1 + 2;
+};
+            </code>
+          </pre>
+        </section>
+
+        <section>
+        <p>Returnere 'object literals'</p>
+          <pre>
+            <code class="javascript">
+var getTempItem = id => ({ id: id, name: "Temp" });
+
+// effectively equivalent to:
+
+var getTempItem = function(id) {
+
+    return {
+        id: id,
+        name: "Temp"
+    };
+};
+            </code>
+          </pre>
+        </section>
+
+        <section>
+
+          <section>
+            <h1>Mer eksempeler!</h1>
+            <p class="fragment">jaokda!</p>
+          </section>
+
+          <section>
+            <pre>
+              <code class="javascript" style="font-size: 0.82em">
+var PageHandler = {
+
+    id: "123456",
+
+    init: function() {
+        document.addEventListener("click", function(event) {
+            this.doSomething(event.type);     // error
+        }, false);
+    },
+
+    doSomething: function(type) {
+        console.log("Handling " + type  + " for " + this.id);
+    }
+};
+            </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>La oss fikse det insektet!</p>
+            <pre>
+              <code class="javascript" style="font-size: 0.82em">
+var PageHandler = {
+
+  id: "123456",
+
+  init: function() {
+      document.addEventListener("click", (function(event) {
+          this.doSomething(event.type);
+      }).bind(this), false);
+  },
+
+  doSomething: function(type) {
+      console.log("Handling " + type  + " for " + this.id);
+  }
+};
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Pilfunksjon</p>
+            <pre>
+              <code class="javascript" style="font-size: 0.82em">
+var PageHandler = {
+
+  id: "123456",
+
+  init: function() {
+      document.addEventListener("click",
+              event => this.doSomething(event.type), false);
+  },
+
+  doSomething: function(type) {
+      console.log("Handling " + type  + " for " + this.id);
+  }
+};
+              </code>
+            </pre>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>Kjekt å vite</h2>
           <ul>
             <li>The typeof operator returns "function" for arrow functions.</li>
             <li>Arrow functions are still instances of Function, so instanceof works the same way.</li>
@@ -73,6 +216,25 @@
           </ul>
         </section>
 
+        <section>
+          <h1><code>class</code></h1>
+        </section>
+
+        <section>
+          <pre>
+            <code class="javascript">
+var Language = function(config) {
+  this.name = config.name;
+  this.founder = config.founder;
+  this.year = config.year;
+};
+
+Language.prototype.summary = function() {
+  return this.name + " was created by " + this.founder + " in " + this.year;
+};
+            </code>
+          </pre>
+        </section>
       </div>
 
     </div>

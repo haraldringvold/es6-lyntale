@@ -146,8 +146,21 @@ body:before {
   z-index: 9999; }
 
 .reveal code {
-  color: #000000;
-  background: #fdf6e3;
+  /*color: #000000;*/
+  /*background: #fdf6e3;*/
   border-radius: 2px;
   padding: 0px 5px;
-  display: inline-block; }
+  /*display: inline-block; */
+}
+
+.reveal pre {
+ text-align: center;
+ font-size: 1em;
+ width: auto;
+}
+
+.reveal pre code {
+  text-align: left;
+  padding: 0 35px;
+  max-height: none;
+}
