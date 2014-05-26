@@ -136,7 +136,7 @@ var getTempItem = function(id) {
         <section>
 
           <section>
-            <h1>Mer eksempeler!</h1>
+            <h1>Mer eksempeler?</h1>
             <p class="fragment">jaokda!</p>
           </section>
 
@@ -221,8 +221,14 @@ var PageHandler = {
         </section>
 
         <section>
+          <h2>Motivasjon</h2>
+          <p>ECMAScript already has excellent features for defining abstractions for kinds of things. The trinity of constructor functions, prototypes, and instances are more than adequate for solving the problems that classes solve in other languages. The intent of this strawman is not to change those semantics. Instead, it’s to provide a terse and declarative surface for those semantics so that programmer intent is expressed instead of the underlying imperative machinery.</p>
+          <p></p>
+        </section>
+
+        <section>
           <pre>
-            <code class="javascript">
+            <code class="javascript" style="font-size: 0.65em">
 var Language = function(config) {
   this.name = config.name;
   this.founder = config.founder;
@@ -235,6 +241,25 @@ Language.prototype.summary = function() {
             </code>
           </pre>
         </section>
+
+        <section>
+          <pre>
+            <code class="javascript" style="font-size: 0.65em">
+class Language {
+  constructor(name, founder, year) {
+    this.name = name;
+    this.founder = founder;
+    this.year = year;
+  }
+
+  summary() {
+    return this.name + " was created by " + this.founder + " in " + this.year;
+  }
+}
+            </code>
+          </pre>
+        </section>
+
       </div>
 
     </div>
