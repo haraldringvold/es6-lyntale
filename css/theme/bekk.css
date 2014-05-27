@@ -165,3 +165,11 @@ body:before {
   max-height: none;
   /*word-wrap: break-word;*/
 }
+
+.reveal ul li {
+  margin-bottom: 20px;
+}
+
+.left-align {
+  text-align: left;
+}

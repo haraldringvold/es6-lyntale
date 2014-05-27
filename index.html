@@ -58,9 +58,9 @@
         <section>
           <h2>Pilfunksjon</h2>
           <ul>
-            <li><strong>Lexical this binding</strong> The value of <code>this</code> inside of the function is determined by where the arrow function is defined not where it is used.</li>
-            <li><strong>Not newable</strong>: Arrow functions cannot be used a constructors and will throw an error when used with <code>new</code>.</li>
-            <li><strong>Can’t change <code>this</code>:</strong> The value of this inside of the function can’t be changed, it remains the same value throughout the entire lifecycle of the function.</li>
+            <li><strong>Leksikalsk binding av <code>this</code>:</strong> Verdien av <code>this</code> er faktisk det du trodde den skulle være.</li>
+            <li><strong>Kan ikke <code>new</code>-es:</strong> Kan ikke brukes som konstruktør og vil kaste en feil om den brukes med <code>new</code>.</li>
+            <li><strong>Kan ikke endre <code>this</code>:</strong> Verdien av <code>this</code> inne i funksjonen kan ikke endres. Den er det samme gjennom hele funksjonens livssyklus.</li>
           </ol>
 
         </section>
@@ -222,8 +222,15 @@ var PageHandler = {
 
         <section>
           <h2>Motivasjon</h2>
-          <p>ECMAScript already has excellent features for defining abstractions for kinds of things. The trinity of constructor functions, prototypes, and instances are more than adequate for solving the problems that classes solve in other languages. The intent of this strawman is not to change those semantics. Instead, it’s to provide a terse and declarative surface for those semantics so that programmer intent is expressed instead of the underlying imperative machinery.</p>
-          <p></p>
+          <p class="left-align">
+            ES6-klasser er enkel syntaktisk sukker over prototyp-basert OO-teknikk.
+            <!-- Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability. -->
+            <!-- En -->
+          </p>
+
+          <aside class="notes">
+            maximally_minimal_classes
+          </aside>
         </section>
 
         <section>
@@ -243,8 +250,9 @@ Language.prototype.summary = function() {
         </section>
 
         <section>
-          <pre>
-            <code class="javascript" style="font-size: 0.65em">
+          <section>
+            <pre>
+              <code class="coffeescript" style="font-size: 0.65em">
 class Language {
   constructor(name, founder, year) {
     this.name = name;
@@ -256,8 +264,34 @@ class Language {
     return this.name + " was created by " + this.founder + " in " + this.year;
   }
 }
-            </code>
-          </pre>
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <pre>
+              <code class="coffeescript">
+class MetaLanguage extends Language {
+  constructor(x, y, z, version) {
+    super(x, y, z);
+    this.version = version;
+  }
+
+  static uberStaticMetaLol() {
+    return "LOOOOL" ;
+  }
+}
+              </code>
+            </pre>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>Kjekt å vite</h2>
+          <ul>
+            <li>Foreløpig ingen private attributter</li>
+          </ul>
         </section>
 
       </div>
