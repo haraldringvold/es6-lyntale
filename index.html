@@ -95,7 +95,8 @@ var sum = function(num1, num2) {
             </code>
           </pre>
           <aside class="notes">
-            Mer eller mindre likt som insiden av en vanlig funksjon.
+            <p>Inni curly braces: Mer eller mindre likt som insiden av en vanlig funksjon.</p>
+
           </aside>
         </section>
 
@@ -209,10 +210,10 @@ var PageHandler = {
         <section>
           <h2>Kjekt å vite</h2>
           <ul>
-            <li>The typeof operator returns "function" for arrow functions.</li>
-            <li>Arrow functions are still instances of Function, so instanceof works the same way.</li>
-            <li>The methods call(), apply(), and bind() are still usable with arrow functions, though they do not augment the value of this.</li>
-            <li>The biggest difference is that arrow functions can’t be used with new, attempting to do results in an error being thrown.</li>
+            <li>Operatøren <code>typeof</code> returnerer "fuction" for pilfunksjoner.</li>
+            <li>Pilfunksjoner er fortsatt et instans av Function så <code>instanceof</code> funkerer som tidligere.</li>
+            <li>Metodene call(), apply(), and bind() kan fortsatt brukes men endrer ikke <code>this</code></li>
+            <li><a href="http://kangax.github.io/compat-table/es6/#arrow_functions" target="_blank">Foreløpig bare støttet av Firefox</a></li>
           </ul>
         </section>
 
@@ -221,15 +222,17 @@ var PageHandler = {
         </section>
 
         <section>
-          <h2>Motivasjon</h2>
-          <p class="left-align">
+          <!-- <h2>Motivasjon</h2> -->
+          <p class="">
             ES6-klasser er enkel syntaktisk sukker over prototyp-basert OO-teknikk.
-            <!-- Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability. -->
-            <!-- En -->
+            En praktisk deklarativ form som uttrykker programmererens hensikt i stedet for den underliggende maskineriet.
           </p>
 
           <aside class="notes">
-            maximally_minimal_classes
+            <p>Javascripts <b>konstruktør funksjoner</b>, <b>prototyper</b> og <b>instanser</b> er mer en nok til å løse det klasser gjør i andre språk.</p>
+            <p>ES6 klasser er disse tre under panseret.</p>
+            <p>Utkast, fortsatt i endring. Siste endring var rev. 25, 22. mai.</p>
+
           </aside>
         </section>
 
@@ -290,7 +293,33 @@ class MetaLanguage extends Language {
         <section>
           <h2>Kjekt å vite</h2>
           <ul>
-            <li>Foreløpig ingen private attributter</li>
+            <li>Ingen private attributter</li>
+            <li><a href="http://kangax.github.io/compat-table/es6/#class" target="_blank">Foreløpig ikke støttet av noen nettlesere</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Spørsmål..</h1>
+          <p class="fragment">..svares etter beste evne.</p>
+        </section>
+
+        <section>
+          <h1>Takk for meg! :)</h1>
+        </section>
+
+        <section>
+          <h1>Kilder</h1>
+          <p class="left-align">Pilfunksjoner</p>
+          <ul>
+            <li><a href="https://github.com/lukehoban/es6features#arrows">https://github.com/lukehoban/es6features#arrows</a></li>
+            <li><a href="http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/">http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/</a></li>
+            <li><a href="http://tc39wiki.calculist.org/es6/arrow-functions/">http://tc39wiki.calculist.org/es6/arrow-functions/</a></li>
+          </ul>
+          <p class="left-align">Klasser</p>
+          <ul>
+            <li><a href="https://github.com/lukehoban/es6features#classes">https://github.com/lukehoban/es6features#classes</a></li>
+            <li><a href="http://tc39wiki.calculist.org/es6/classes/">http://tc39wiki.calculist.org/es6/classes/</a></li>
+            <li><a href="http://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582#class">http://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582#class</a></li>
           </ul>
         </section>
 
