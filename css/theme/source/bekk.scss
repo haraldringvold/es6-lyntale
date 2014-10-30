@@ -46,9 +46,40 @@ body:before {
 }
 
 .reveal code {
-  color: #000000;
-  background: #fdf6e3;
   border-radius: 2px;
   padding: 0px 5px;
-  display: inline-block;
+}
+
+.reveal pre {
+  text-align: center;
+  font-size: 1em;
+  box-shadow: none;
+  width: auto;
+}
+
+.reveal pre code {
+  text-align: left;
+  padding: 0 35px;
+  max-height: none;
+}
+
+.reveal ul li {
+  margin-bottom: 20px;
+}
+
+.reveal ul {
+  padding: 0 20px;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.center-align {
+  text-align: center;
+}
+
+figcaption.quote-source {
+  margin-top: 0.7em;
+  font-style: italic;
 }

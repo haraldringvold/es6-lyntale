@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Ecmascript 6 lyntale</title>
+    <title>Klasser og pilfunksjoner - ECMAScript 6 lyntale</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Klasser og pilfunksjoner i ECMAscript 6">
+    <meta name="author" content="Harald Ringvold">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -49,20 +49,32 @@
           <p>
             <small><a href="http://ringvold.nu">Harald Ringvold</a> / <a href="http://twitter.com/harrir">@harrir</a></small>
           </p>
+
+          Tilbakemelding: <br>
+          <a href="http://bit.ly/klasseogpil">http://bit.ly/klasseogpil</a>
         </section>
 
         <section>
           <h1><code>=></code></h1>
           <p class="fragment">(pilfunksjon, arrow function)</p>
         </section>
-        <section>
-          <h2>Pilfunksjon</h2>
-          <ul>
-            <li><strong>Leksikalsk binding av <code>this</code>:</strong> Verdien av <code>this</code> er faktisk det du trodde den skulle være.</li>
-            <li><strong>Kan ikke <code>new</code>-es:</strong> Kan ikke brukes som konstruktør og vil kaste en feil om den brukes med <code>new</code>.</li>
-            <li><strong>Kan ikke endre <code>this</code>:</strong> Verdien av <code>this</code> inne i funksjonen kan ikke endres. Den er det samme gjennom hele funksjonens livssyklus.</li>
-          </ol>
 
+        <section>
+          <section>
+            <h2>Pilfunksjon</h2>
+            <ul>
+              <li><strong>Leksikalsk binding av <code>this</code>:</strong> Verdien av <code>this</code> er faktisk det du trodde den skulle være.</li>
+              <li><strong>Kan ikke <code>new</code>-es:</strong> Kan ikke brukes som konstruktør og vil kaste en feil om den brukes med <code>new</code>.</li>
+              <li><strong>Kan ikke endre <code>this</code>:</strong> Verdien av <code>this</code> inne i funksjonen kan ikke endres. Den er det samme gjennom hele funksjonens livssyklus.</li>
+            </ul>
+          </section>
+          <section>
+            <figure >
+              <blockqoute cite="http://www.denstoredanske.dk/Sprog,_religion_og_filosofi/Sprog/Fremmedord/l-lk/leksikalsk" >
+                <strong>leksikalsk</strong>, (lat. lexicalis, af gr. leksikon), vedr. et ords grundbetydning, dvs. den betydning, der opfattes som konstant, i modsætning til de varierende betydningsnuancer, som skyldes konteksten.
+              </blockqoute>
+            <figcaption class="center-align quote-source"><a href="http://www.denstoredanske.dk/Sprog,_religion_og_filosofi/Sprog/Fremmedord/l-lk/leksikalsk">- Det Store Danske (leksikon)</a></figcaption></figure>
+          </section>
         </section>
 
         <section>
@@ -150,7 +162,7 @@ var PageHandler = {
 
     init: function() {
         document.addEventListener("click", function(event) {
-            this.doSomething(event.type);     // error
+            this.doSomething(event.type);
         }, false);
     },
 
@@ -163,7 +175,6 @@ var PageHandler = {
           </section>
 
           <section>
-            <p>La oss fikse det insektet!</p>
             <pre>
               <code class="javascript" style="font-size: 0.82em">
 var PageHandler = {
@@ -210,7 +221,7 @@ var PageHandler = {
         <section>
           <h2>Kjekt å vite</h2>
           <ul>
-            <li>Operatøren <code>typeof</code> returnerer "fuction" for pilfunksjoner.</li>
+            <li>Operatøren <code>typeof</code> returnerer "function" for pilfunksjoner.</li>
             <li>Pilfunksjoner er fortsatt et instans av Function så <code>instanceof</code> funkerer som tidligere.</li>
             <li>Metodene call(), apply(), and bind() kan fortsatt brukes men endrer ikke <code>this</code></li>
             <li><a href="http://kangax.github.io/compat-table/es6/#arrow_functions" target="_blank">Foreløpig bare støttet av Firefox</a></li>
@@ -222,16 +233,15 @@ var PageHandler = {
         </section>
 
         <section>
-          <!-- <h2>Motivasjon</h2> -->
           <p class="">
-            ES6-klasser er enkel syntaktisk sukker over prototyp-basert OO-teknikk.
-            En praktisk deklarativ form som uttrykker programmererens hensikt i stedet for den underliggende maskineriet.
+            ES6-klasser er enkel syntaktisk sukker over <a href="http://www.klauskomenda.com/code/javascript-inheritance-by-example/" target="_blank">prototyp-basert OO-teknikk.</a>
           </p>
+          <p>En praktisk deklarativ form som uttrykker programmererens hensikt i stedet for den underliggende maskineriet.</p>
 
           <aside class="notes">
             <p>Javascripts <b>konstruktør funksjoner</b>, <b>prototyper</b> og <b>instanser</b> er mer en nok til å løse det klasser gjør i andre språk.</p>
             <p>ES6 klasser er disse tre under panseret.</p>
-            <p>Utkast, fortsatt i endring. Siste endring var rev. 25, 22. mai.</p>
+            <p>Utkast, fortsatt i endring. Siste endring var rev. 28, 14. oktober</p>
 
           </aside>
         </section>
@@ -280,8 +290,8 @@ class MetaLanguage extends Language {
     this.version = version;
   }
 
-  static uberStaticMetaLol() {
-    return "LOOOOL" ;
+  static isItMeta() {
+    return "YEEEEESH!" ;
   }
 }
               </code>
@@ -305,22 +315,26 @@ class MetaLanguage extends Language {
 
         <section>
           <h1>Takk for meg! :)</h1>
+          <div class="fragment"><p>Husk å gi tilbakemelding!</p>
+                    <p><a href="http://bit.ly/klasseogpil">bit.ly/klasseogpil</a></p></div>
         </section>
 
         <section>
           <h1>Kilder</h1>
-          <p class="left-align">Pilfunksjoner</p>
+          <h3 class="left-align">Pilfunksjoner</h3>
           <ul>
-            <li><a href="https://github.com/lukehoban/es6features#arrows">https://github.com/lukehoban/es6features#arrows</a></li>
-            <li><a href="http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/">http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/</a></li>
-            <li><a href="http://tc39wiki.calculist.org/es6/arrow-functions/">http://tc39wiki.calculist.org/es6/arrow-functions/</a></li>
+            <li><a href="https://github.com/lukehoban/es6features#arrows" target="_blank">Arrows - ES6 Features av lukehoban</a></li>
+            <li><a href="http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/" target="_blank">Understanding ECMAScript 6 arrow functions av Nicholas C. Zakas</a></li>
+            <li><a href="http://tc39wiki.calculist.org/es6/arrow-functions/" target="_blank">Arrow functions - TC39wiki av Dave Herman</a></li>
           </ul>
-          <p class="left-align">Klasser</p>
-          <ul>
-            <li><a href="https://github.com/lukehoban/es6features#classes">https://github.com/lukehoban/es6features#classes</a></li>
-            <li><a href="http://tc39wiki.calculist.org/es6/classes/">http://tc39wiki.calculist.org/es6/classes/</a></li>
-            <li><a href="http://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582#class">http://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582#class</a></li>
-          </ul>
+          <h3 class="left-align">Klasser</h3>
+          <div class="left-align"><ul>
+              <li><a href="https://github.com/lukehoban/es6features#classes" target="_blank">Classes - ES6 Features av lukehoban</a></li>
+              <li><a href="http://tc39wiki.calculist.org/es6/classes/" target="_blank">Classes - TC39wiki av Dave Herman</a></li>
+              <li><a href="http://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582#class" target="_blank">Use ECMAScript 6 Today av Code Tuts+</a></li>
+              <li><a href="http://www.nczonline.net/blog/2012/10/16/does-javascript-need-classes/" target="_blank">Does JavaScript need classes? av Nicholas C. Zakas</a></li>
+            </ul>
+          </div>
         </section>
 
       </div>

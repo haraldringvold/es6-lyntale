@@ -31,7 +31,7 @@ body {
   color: #657b83; }
 
 ::selection {
-  color: white;
+  color: #fff;
   background: #d33682;
   text-shadow: none; }
 
@@ -44,7 +44,7 @@ body {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   color: #586e75;
   font-family: "League Gothic", Impact, sans-serif;
   line-height: 0.9em;
@@ -145,3 +145,5 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #268bd2; }
+
+/*# sourceMappingURL=solarized.css.map */

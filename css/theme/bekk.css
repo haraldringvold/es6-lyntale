@@ -15,10 +15,10 @@ body {
   font-size: 30px;
   font-weight: normal;
   letter-spacing: -0.02em;
-  color: #eeeeee; }
+  color: #eee; }
 
 ::selection {
-  color: white;
+  color: #fff;
   background: #fd5157;
   text-shadow: none; }
 
@@ -32,7 +32,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 30px 0;
-  color: #eeeeee;
+  color: #eee;
   font-family: Georgia, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0em;
@@ -69,7 +69,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #eeeeee;
+  border: 4px solid #eee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -146,30 +146,34 @@ body:before {
   z-index: 9999; }
 
 .reveal code {
-  /*color: #000000;*/
-  /*background: #fdf6e3;*/
   border-radius: 2px;
-  padding: 0px 5px;
-  /*display: inline-block; */
-}
+  padding: 0px 5px; }
 
 .reveal pre {
- text-align: center;
- font-size: 1em;
- width: auto;
-}
+  text-align: center;
+  font-size: 1em;
+  box-shadow: none;
+  width: auto; }
 
 .reveal pre code {
   text-align: left;
   padding: 0 35px;
-  max-height: none;
-  /*word-wrap: break-word;*/
-}
+  max-height: none; }
 
 .reveal ul li {
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
+
+.reveal ul {
+  padding: 0 20px; }
 
 .left-align {
-  text-align: left;
-}
+  text-align: left; }
+
+.center-align {
+  text-align: center; }
+
+figcaption.quote-source {
+  margin-top: 0.7em;
+  font-style: italic; }
+
+/*# sourceMappingURL=bekk.css.map */
